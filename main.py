@@ -7,12 +7,6 @@ from tkinter import filedialog
 import os
 import base64
 
-'''
-    16271120
-    马天波
-    SMS4密码实验
-'''
-
 global file_mw #定义全局变量 来接收文件中的明文/密文
 file_mw = ''
 
@@ -23,7 +17,7 @@ global file_suffix  #全局变量 后缀名
 file_suffix =''
 
 #加密函数
-def mtb_jiami():
+def jiami():
     if miyao.get() == '':
         tkinter.messagebox.showerror('错误', "请输入密钥")
         raise SystemError("没有输入密钥")
@@ -79,7 +73,7 @@ def file_jiami():
         f.write(miwen_b)
 
 #解密函数
-def mtb_jiemi():
+def jiemi():
     if miyao.get() == '':
         tkinter.messagebox.showerror('错误', "请输入密钥")
         raise SystemError("没有输入密钥")
@@ -188,8 +182,8 @@ mw4 = Entry(root,textvariable=path_1,width=40)
 mw4.place(x=75,y=245)
 mw5 = Entry(root,textvariable=path_2,width=40)
 mw5.place(x=75,y=280)
-Button(root,text="加密",width=15,command=mtb_jiami).place(x=385,y=205)
-Button(root,text="解密",width=15,command=mtb_jiemi).place(x=520,y=205)
+Button(root,text="加密",width=15,command=jiami).place(x=385,y=205)
+Button(root,text="解密",width=15,command=jiemi).place(x=520,y=205)
 Button(root,text="清空",width=10,command=qingkong).place(x=655,y=205)
 Button(root,text='打开',width=15,command=openfile).place(x=385,y=240)
 Button(root,text='选择',width=15,command=choose_path).place(x=385,y=275)
